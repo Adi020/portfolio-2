@@ -1,4 +1,4 @@
-function printProjects(projects, check) {
+function printProjects(projects, check, portfolioContainer) {
   function printProjects() {
     const projectsDOM = document.querySelector(".portfolio__content");
     let htmlProjects = "";
@@ -87,7 +87,6 @@ function printProjects(projects, check) {
         </div>
       </article>`;
       }
-
     });
 
     projectsDOM.innerHTML = htmlProjects;
@@ -99,6 +98,9 @@ function printProjects(projects, check) {
   showText.forEach((text) =>
     text.addEventListener("click", function (e) {
       let spanElement = this;
+      let altura = spanElement.previousElementSibling.scrollHeight;
+      let alturaPadre = portfolioContainer.scrollHeight;
+      let alturaPrevia = spanElement.previousElementSibling.offsetHeight
       if (
         spanElement.previousElementSibling.classList.contains("hidden-info")
       ) {
@@ -106,11 +108,17 @@ function printProjects(projects, check) {
         spanElement.childNodes[0].nodeValue = check.checked
           ? "Show Less"
           : "Mostrar Menos";
+        if (!portfolioContainer.classList.contains("hidden__projects")) {
+          portfolioContainer.style.maxHeight = alturaPadre + (altura - alturaPrevia) + "px";
+        }
       } else {
         spanElement.previousElementSibling.classList.add("hidden-info");
         spanElement.childNodes[0].nodeValue = check.checked
           ? "Show More"
           : "Mostrar Más";
+        if (!portfolioContainer.classList.contains("hidden__projects")) {
+          portfolioContainer.style.maxHeight = alturaPadre + alturaPrevia + "px";
+        }
       }
     })
   );
