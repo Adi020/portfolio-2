@@ -16,7 +16,7 @@ const projectsES = [
 		noche y modo de día, ademas de que la interfaz es responsiva adaptandose a cualquier dispositivo`,
 	},
 	{
-		projectName: " E-commerce con logueo de usuarios ",
+		projectName: "E-commerce con logueo de usuarios ",
 		projectDesktopImg: "../assets/img/E-commerce.png",
 		projectMobileImg: "../assets/img/E-commerce-movil.jpg",
 		projectText: `En el desarrollo de esta aplicación, empleé una combinación de tecnologías avanzadas, incluyendo ReactJS y TailwindCSS.
