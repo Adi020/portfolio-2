@@ -29,16 +29,16 @@ function printProjects(projects, check) {
         <div class="portfolio__img">
           <img src="../assets/img/mask.webp" alt="image" />
           <img
-            class="ellipse__right"
-            src="../assets/img/EllipseProyects2.png"
+            class="ellipse__left"
+            src="../assets/img/EllipseProyects.png"
             alt="image"
           />
-          <div class="project__desktop left">
+          <div class="project__desktop right">
             <div class="project__img">
               <img src="${project.projectDesktopImg}" alt="project image" />
             </div>
           </div>
-          <div class="project__mobile left">
+          <div class="project__mobile right">
             <div class="project__img">
               <img src="${project.projectMobileImg}" alt="project image" />
             </div>
@@ -70,16 +70,16 @@ function printProjects(projects, check) {
         <div class="portfolio__img">
           <img src="../assets/img/mask.webp" alt="image" />
           <img
-            class="ellipse__left"
-            src="../assets/img/EllipseProyects.png"
+            class="ellipse__right"
+            src="../assets/img/EllipseProyects2.png"
             alt="image"
           />
-          <div class="project__desktop right">
+          <div class="project__desktop left">
             <div class="project__img">
               <img src="${project.projectDesktopImg}" alt="project image" />
             </div>
           </div>
-          <div class="project__mobile right">
+          <div class="project__mobile left">
             <div class="project__img">
               <img src="${project.projectMobileImg}" alt="project image" />
             </div>
