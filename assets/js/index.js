@@ -24,6 +24,14 @@ const toast = document.querySelector(".toast")
 const closeIcon = document.querySelector(".close")
 const progress = document.querySelector(".progress")
 
+if (check.checked) {
+  printProjects(projectsEN, check, portfolioContainer);
+  printFeaturedProjects(featuredProjectsEN, check);
+} else {
+  printProjects(projectsES, check, portfolioContainer);
+  printFeaturedProjects(featuredProjectsES, check);
+}
+
 headerBtn.addEventListener("click", toggleMenu);
 check.addEventListener("click", () => handleCheckClick(check));
 showProjects.addEventListener("click", (e) =>
@@ -35,14 +43,6 @@ closeIcon.addEventListener("click", () => {
     progress.classList.remove("active")
   }, 300)
 })
-
-if (check.checked) {
-  printProjects(projectsEN, check);
-  printFeaturedProjects(featuredProjectsEN, check);
-} else {
-  printProjects(projectsES, check);
-  printFeaturedProjects(featuredProjectsES, check);
-}
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
