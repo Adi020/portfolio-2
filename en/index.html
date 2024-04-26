@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fabio | Portfolio</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carter+One&family=Inconsolata:wght@400;600;700&family=Rubik+Glitch+Pop&family=Single+Day&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="shortcut icon" href="../logo.svg" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="cursor light"></div>
+    <div class="toast">
+      <div class="toast-content">
+        <i class="bx bx-check check"></i>
+        <div class="message">
+          <span class="text text-1">Success!</span>
+          <span class="text text-2">Message sent succesfully</span>
+        </div>
+        <i class='bx bx-x close'></i>
+        <div class="progress"></div>
+      </div>
+    </div>
+    <header class="header">
+      <nav class="header__nav">
+        <a aria-label="home" class="logo" href="#" style="--i: 5">
+          <div class="circles">
+            <div></div>
+            <div></div>
+          </div>
+        </a>
+        <div class="header__menu">
+          <ul class="list">
+            <li class="list__item">
+              <a class="list__link" href="#home" style="--i: 1"
+                ><i class="bx bx-home"></i>Home</a
+              >
+            </li>
+            <li class="list__item">
+              <a class="list__link" href="#about" style="--i: 2"
+                ><i class="bx bxs-id-card"></i>About me</a
+              >
+            </li>
+            <li class="list__item">
+              <a class="list__link" href="#projects" style="--i: 3"
+                ><i class="bx bx-table"></i>Projects</a
+              >
+            </li>
+            <li class="list__item">
+              <a class="list__link" href="#contact" style="--i: 4"
+                ><i class="bx bxs-contact"></i>Contact me</a
+              >
+            </li>
+          </ul>
+          <div class="header__menu-social">
+            <a
+              aria-label="email"
+              href="mailto:adrian.camacho.zotelo@gmail.com"
+              target="_blank"
+              ><i class="bx bx-envelope"></i
+            ></a>
+            <a
+              aria-label="github"
+              href="https://github.com/Adi020"
+              target="_blank"
+              ><i class="bx bxl-github"></i
+            ></a>
+            <a
+              aria-label="bxl-linkedin"
+              href="https://www.linkedin.com/in/fabio-camacho-a41b17281/"
+              target="_blank"
+              ><i class="bx bxl-linkedin"></i
+            ></a>
+          </div>
+        </div>
+        <div class="header__social">
+          <a
+            aria-label="email"
+            href="mailto:adrian.camacho.zotelo@gmail.com"
+            target="_blank"
+            ><i class="bx bx-envelope"></i
+          ></a>
+          <a
+            aria-label="github"
+            href="https://github.com/Adi020"
+            target="_blank"
+            ><i class="bx bxl-github"></i
+          ></a>
+          <a
+            aria-label="bxl-linkedin"
+            href="https://www.linkedin.com/in/fabio-camacho-a41b17281/"
+            target="_blank"
+            ><i class="bx bxl-linkedin"></i
+          ></a>
+        </div>
+        <button
+          type="button"
+          title="view links"
+          class="header__btn"
+          style="--i: 5"
+        >
+          <i class="bx bx-menu"></i>
+        </button>
+        <div class="header__translate">
+          <span class="es">Es</span>
+          <input type="checkbox" id="btn-switch" checked />
+          <label class="label-switch" for="btn-switch"></label>
+          <span class="en">En</span>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section id="home" class="hero">
+        <div class="container">
+          <div class="hero__img">
+            <img src="../assets/img/Robot.webp" alt="Robot" />
+            <img src="../assets/img/Ellipse.svg" alt="Elipse" />
+            <img src="../assets/img/Ellipse2.png" alt="Elipse" />
+            <img src="../assets/img/Ellipse3.png" alt="Elipse" />
+          </div>
+          <div class="hero__container">
+            <div class="hero__tag">Full-Stack Web Developer</div>
+            <h1 class="hero__title">
+              <span class="title__tag">Hi,</span> I'm Fabio
+            </h1>
+            <p class="hero__text">
+              I'm ready to bring my skills as a web developer to your big
+              project. If you're looking for someone committed, I'm the one.
+            </p>
+            <button onclick="location.href='#contact'" class="hero__btn">
+              Contact me<i class="bx bx-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <h2 class="title">About me</h2>
+        <div class="container">
+          <div class="about__img">
+            <div class="about__social">
+              <a
+                aria-label="email"
+                href="mailto:adrian.camacho.zotelo@gmail.com"
+                target="_blank"
+                ><i class="bx bx-envelope"></i
+              ></a>
+              <a
+                aria-label="github"
+                href="https://github.com/Adi020"
+                target="_blank"
+                ><i class="bx bxl-github"></i
+              ></a>
+              <a
+                aria-label="bxl-linkedin"
+                href="https://www.linkedin.com/in/fabio-camacho-a41b17281/"
+                target="_blank"
+                ><i class="bx bxl-linkedin"></i
+              ></a>
+            </div>
+            <span class="cicle-spin"></span>
+            <img src="../assets/img/Photo.png" alt="photo" />
+          </div>
+          <div>
+            <p class="about__text">
+              Hi, I'm Fabio Adrian. My first approach to web development began
+              at the age of 15, when I accidentally deleted an element from a
+              page by clicking 'inspect element'. Concerned about correcting it,
+              my interest in programming arose, thus marking the beginning of my
+              career. Since then, I have gained skills in various technologies
+              such as HTML, CSS, React, Node.js, and I continue to grow and
+              learn in this exciting field.
+            </p>
+          </div>
+          <a class="btn" href="../public/CV es/CV.pdf" download>Download CV</a>
+        </div>
+      </section>
+
+      <section id="projects" class="section portfolio">
+        <h2 class="title">Projects</h2>
+        <div class="container swiper">
+          <div class="featured__content swiper-wrapper"></div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        <div class="container projects-content">
+          <div class="portfolio__content hidden__projects"></div>
+          <button class="portfolio__show">Show More</button>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <h2 class="title">¡Contact me!</h2>
+        <div class="container">
+          <form id="form" class="contact__form">
+            <div class="label__input">
+              <label for="name"><i class="bx bx-user"></i></label>
+              <input type="text" id="name" placeholder="Name" name="name" />
+            </div>
+            <div class="label__input">
+              <label for="email"><i class="bx bx-at"></i></label>
+              <input type="email" id="email" placeholder="Email" name="email" />
+            </div>
+            <div class="textarea">
+              <label for="message">Mensaje</label>
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+                placeholder="Type your message..."
+              ></textarea>
+            </div>
+            <button class="btn" type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+
+      <footer id="footer" class="footer">
+        <p class="footer__copy">Copyright &copy; 2023</p>
+      </footer>
+    </main>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "IngxrmRBIDvpQB0g9",
+        });
+      })();
+    </script>
+
+    <script type="module" src="../assets/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
+</html>
