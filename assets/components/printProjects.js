@@ -117,7 +117,7 @@ function printProjects(projects, check, portfolioContainer) {
           ? "Show More"
           : "Mostrar Más";
         if (!portfolioContainer.classList.contains("hidden__projects")) {
-          portfolioContainer.style.maxHeight = alturaPadre + alturaPrevia + "px";
+          portfolioContainer.style.maxHeight = alturaPadre - (altura - alturaPrevia) + "px";
         }
       }
     })
