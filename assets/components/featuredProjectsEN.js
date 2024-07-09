@@ -29,7 +29,7 @@ const featuredProjectsEN = [
         projectText: `Query via API, location permissions, query by location,
         compositing, image by weather, conversion of Grades, Loader
         & Responsive Interface`,
-        link: "https://entregable-gen26-2.netlify.app/"
+        link: "https://weather-p2sda.netlify.app/"
     },
 ];
 
