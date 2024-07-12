@@ -44,7 +44,7 @@ const projectsES = [
 	{
 		projectName: "aplicación del tiempo",
 		projectDesktopImg: "../assets/img/Clima.webp",
-		projectMobileImg: "../assets/img/ClimaMovil.jpg",
+		projectMobileImg: "../assets/img/ClimaMovil.webp",
 		projectText: `En el desarrollo de esta aplicación, empleé una combinación de tecnologías avanzadas, i
     ncluyendo ReactJS y TailwindCSS. Implementé el consumo de API, solicitando permisos y proporcionando 
     la ubicación del usuario para realizar consultas precisas. Además, diseñé la interfaz para ser responsiva, 
