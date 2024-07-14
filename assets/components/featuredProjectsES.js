@@ -30,7 +30,7 @@ const featuredProjectsES = [
         projectText: `Consulta via API, permisos de ubicación, consulta por
         ubicación, componetización, imagen por clima, conversión de
         grados, loader y interfaz responsiva`,
-        link: "https://weather-p2sda.netlify.app/"
+        link: "https://weather-time-site.netlify.app/"
     },
 ];
 
