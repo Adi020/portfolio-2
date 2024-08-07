@@ -898,12 +898,12 @@ img {
 
 .project__mobile .a .b .c a{
   animation: slideBottomIn 0.5s ease forwards;
-  color: #542dc0;
+  color: #2d2fc0;
 
 }
 
 .project__mobile .a .b .c a:hover{
-  color: #8275f5;
+  color: rgb(94, 108, 185);
 }
 
 @media (max-width: 375px) {
