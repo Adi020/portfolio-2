@@ -790,7 +790,7 @@ img {
 }
 
 .project__technology-icon {
-  background: #186e88;
+  background: #3e15ad;
   border: 1px solid rgba(0, 0, 0, 0.534);
   border-radius: 5px;
   overflow: hidden;
@@ -898,6 +898,12 @@ img {
 
 .project__mobile .a .b .c a{
   animation: slideBottomIn 0.5s ease forwards;
+  color: #4336b4;
+
+}
+
+.project__mobile .a .b .c a:hover{
+  color: #6152e7;
 }
 
 @media (max-width: 375px) {
