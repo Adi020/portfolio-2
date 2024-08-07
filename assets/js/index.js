@@ -86,7 +86,7 @@ observeSections(sections, links);
 
 let projectsInfo = document.querySelectorAll(".portfolio__item");
 
-observeProject(projectsInfo);
+observeProject(projectsInfo, check.checked);
 
 function addEvents() {
   window.addEventListener("scroll", handleScroll);
