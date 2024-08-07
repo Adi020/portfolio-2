@@ -796,6 +796,7 @@ img {
   overflow: hidden;
   display: flex;
   transition: scale 0.2 ease-in-out;
+  aspect-ratio: 1/1;
 }
 
 .project__technology-icon:hover {
