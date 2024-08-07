@@ -6,13 +6,13 @@ function printProjects(projects, check, portfolioContainer) {
     projects.map((project, i) => {
       if ((i + 1) % 2 === 0) {
         htmlProjects += `
-        <article class="portfolio__item">
+      <article class="portfolio__item">
         <div class="portfolio__body">
           <h3 class="portfolio__title">
             <span class="portfolio__tag">${project.projectName.slice(
-          0,
-          project.projectName.indexOf(" ")
-        )}</span> ${project.projectName.slice(
+              0,
+              project.projectName.indexOf(" ")
+            )}</span> ${project.projectName.slice(
           project.projectName.indexOf(" ")
         )}
           </h3>
@@ -34,16 +34,53 @@ function printProjects(projects, check, portfolioContainer) {
             alt="image"
           />
           <div class="project__desktop right">
-            <div class="project__img">
-              <img src="${project.projectDesktopImg}" alt="project image" />
+            <div class="project__content">
+              <div class="project__img">
+                <img src="${project.projectDesktopImg}" alt="project image" />
+              </div>
+              <div class="project__technologies">
+              <div class="project__technologies-list">
+                ${project.technologies
+                  .map(
+                    (technology, i) =>
+                      `
+                    <div class="project__technology-icon" style="--j: ${i + 1}">
+                      <img src="${technology.icon}" alt="icon icon">
+                    </div>
+                    `
+                  )
+                  .join("")}
+              </div>
+              </div>
             </div>
           </div>
+
           <div class="project__mobile right">
-            <div class="project__img">
-              <img src="${project.projectMobileImg}" alt="project image" />
+            <div class="a">
+                  <div class="b">
+                  <div class="c">
+                  <div class="d">
+                  <a
+                  aria-label="website"
+                  href="${project.link}"
+                  target="_blank"
+                  >${
+                    check ? "Sitio Web" : "Web Site"
+                  }<i class="bx bx-right-top-arrow-circle"></i>
+                  </a>
+                  </div>
+                  </div>
+              <div class="project__img">
+                <img src="${project.projectMobileImg}" alt="project image" />
+              </div>
+
             </div>
+ 
+           </div>
+
           </div>
-        </div>
+
+      </div>
       </article>`;
       } else {
         htmlProjects += `
@@ -51,9 +88,9 @@ function printProjects(projects, check, portfolioContainer) {
         <div class="portfolio__body">
           <h3 class="portfolio__title">
             <span class="portfolio__tag">${project.projectName.slice(
-          0,
-          project.projectName.indexOf(" ")
-        )}</span> ${project.projectName.slice(
+              0,
+              project.projectName.indexOf(" ")
+            )}</span> ${project.projectName.slice(
           project.projectName.indexOf(" ")
         )}
           </h3>
@@ -75,16 +112,53 @@ function printProjects(projects, check, portfolioContainer) {
             alt="image"
           />
           <div class="project__desktop left">
+                      <div class="project__content">
+
             <div class="project__img">
               <img src="${project.projectDesktopImg}" alt="project image" />
             </div>
-          </div>
+            <div class="project__technologies">
+              <div class="project__technologies-list">
+                ${project.technologies
+                  .map(
+                    (technology, i) =>
+                      `
+                    <div class="project__technology-icon" style="--j: ${i + 1}">
+                      <img src="${technology.icon}" alt="icon icon">
+                    </div>
+                    `
+                  )
+                  .join("")}
+              </div>
+              </div>
+            </div>
+            </div>
+
           <div class="project__mobile left">
+            <div class="a">
+             <div class="b">
+             <div class="c">
+                <div class="d">
+
+             <a
+                  aria-label="website"
+                  href="${project.link}"
+                  target="_blank"
+                  >${
+                    check ? "Sitio Web" : "Web Site"
+                  }<i class="bx bx-right-top-arrow-circle"></i>
+                  </a>
+                                    </div>
+                  </div>
+
+
             <div class="project__img">
               <img src="${project.projectMobileImg}" alt="project image" />
             </div>
           </div>
         </div>
+                   </div>
+
       </article>`;
       }
     });
@@ -100,7 +174,7 @@ function printProjects(projects, check, portfolioContainer) {
       let spanElement = this;
       let altura = spanElement.previousElementSibling.scrollHeight;
       let alturaPadre = portfolioContainer.scrollHeight;
-      let alturaPrevia = spanElement.previousElementSibling.offsetHeight
+      let alturaPrevia = spanElement.previousElementSibling.offsetHeight;
       if (
         spanElement.previousElementSibling.classList.contains("hidden-info")
       ) {
@@ -109,7 +183,8 @@ function printProjects(projects, check, portfolioContainer) {
           ? "Show Less"
           : "Mostrar Menos";
         if (!portfolioContainer.classList.contains("hidden__projects")) {
-          portfolioContainer.style.maxHeight = alturaPadre + (altura - alturaPrevia) + "px";
+          portfolioContainer.style.maxHeight =
+            alturaPadre + (altura - alturaPrevia) + "px";
         }
       } else {
         spanElement.previousElementSibling.classList.add("hidden-info");
@@ -117,7 +192,8 @@ function printProjects(projects, check, portfolioContainer) {
           ? "Show More"
           : "Mostrar Más";
         if (!portfolioContainer.classList.contains("hidden__projects")) {
-          portfolioContainer.style.maxHeight = alturaPadre - (altura - alturaPrevia) + "px";
+          portfolioContainer.style.maxHeight =
+            alturaPadre - (altura - alturaPrevia) + "px";
         }
       }
     })
