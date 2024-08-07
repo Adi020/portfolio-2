@@ -65,7 +65,7 @@ function printProjects(projects, check, portfolioContainer) {
                   href="${project.link}"
                   target="_blank"
                   >${
-                    check.checked ? "Sitio Web" : "Web Site"
+                    check.checked ? "Web Site" : "Sitio Web"
                   }<i class="bx bx-right-top-arrow-circle"></i>
                   </a>
                   </div>
@@ -145,7 +145,7 @@ function printProjects(projects, check, portfolioContainer) {
                   href="${project.link}"
                   target="_blank"
                   >${
-                    check.checked ? "Sitio Web" : "Web Site"
+                    check.checked ? "Web Site" : "Sitio Web"
                   }<i class="bx bx-right-top-arrow-circle"></i>
                   </a>
                                     </div>
