@@ -1,203 +1,133 @@
-function printProjects(projects, check, portfolioContainer) {
-  function printProjects() {
-    const projectsDOM = document.querySelector(".portfolio__content");
-    let htmlProjects = "";
+import featuredProjectsEN from "../components/featuredProjectsEN.js";
+import featuredProjectsES from "../components/featuredProjectsES.js";
+import { handleCheckClick } from "../components/handleCheckClick .js";
+import { handleLoadEvent } from "../components/handleLoadEvent.js";
+import { handleShowProjectsClick } from "../components/handleShowProjectsClick.js";
+import { observeProject } from "../components/observeProject.js";
+import { observeSections } from "../components/observeSections.js";
+import printFeaturedProjects from "../components/printFeaturedProjects.js";
+import printProjects from "../components/printProjects.js";
+import projectsEN from "../components/projectsEN.js";
+import projectsES from "../components/projectsES.js";
 
-    projects.map((project, i) => {
-      if ((i + 1) % 2 === 0) {
-        htmlProjects += `
-      <article class="portfolio__item">
-        <div class="portfolio__body">
-          <h3 class="portfolio__title">
-            <span class="portfolio__tag">${project.projectName.slice(
-              0,
-              project.projectName.indexOf(" ")
-            )}</span> ${project.projectName.slice(
-          project.projectName.indexOf(" ")
-        )}
-          </h3>
-          <p class="portfolio__text">
-            <span class="portfolio__info hidden-info">
-              ${project.projectText}
-            </span>
-            <span class="viewMore">
-              Show More<i class="bx bx-chevron-up"></i
-            >
-              </span>
-          </p>
-        </div>
-        <div class="portfolio__img">
-          <img src="../assets/img/mask.webp" alt="image" />
-          <img
-            class="ellipse__left"
-            src="../assets/img/EllipseProyects.png"
-            alt="image"
-          />
-          <div class="project__desktop right">
-            <div class="project__content">
-              <div class="project__img">
-                <img src="${project.projectDesktopImg}" alt="project image" />
-              </div>
-              <div class="project__technologies">
-              <div class="project__technologies-list">
-                ${project.technologies
-                  .map(
-                    (technology, i) =>
-                      `
-                    <div class="project__technology-icon" style="--j: ${i + 1}">
-                      <img src="${technology.icon}" alt="icon icon">
-                    </div>
-                    `
-                  )
-                  .join("")}
-              </div>
-              </div>
-            </div>
-          </div>
+const form = document.getElementById("form");
 
-          <div class="project__mobile right">
-            <div class="a">
-                  <div class="b">
-                  <div class="c">
-                  <div class="d">
-                  <a
-                  aria-label="website"
-                  href="${project.link}"
-                  target="_blank"
-                  >${
-                    check.checked ? "Sitio Web" : "Web Site"
-                  }<i class="bx bx-right-top-arrow-circle"></i>
-                  </a>
-                  </div>
-                  </div>
-              <div class="project__img">
-                <img src="${project.projectMobileImg}" alt="project image" />
-              </div>
+let headerMenu = document.querySelector(".header__menu");
+let check = document.querySelector("#btn-switch");
+let portfolioContainer = document.querySelector(".portfolio__content");
+let showProjects = document.querySelector(".portfolio__show");
+let showDegradiant = document.querySelector(".portfolio .portfolio__content");
+let headerBtn = document.querySelector(".header__btn");
+let sections = document.querySelectorAll("section");
+let links = document.querySelectorAll(".list__link");
+const pointer = document.querySelector(".cursor");
+const toast = document.querySelector(".toast");
+const closeIcon = document.querySelector(".close");
+const progress = document.querySelector(".progress");
 
-            </div>
- 
-           </div>
-
-          </div>
-
-      </div>
-      </article>`;
-      } else {
-        htmlProjects += `
-        <article class="portfolio__item">
-        <div class="portfolio__body">
-          <h3 class="portfolio__title">
-            <span class="portfolio__tag">${project.projectName.slice(
-              0,
-              project.projectName.indexOf(" ")
-            )}</span> ${project.projectName.slice(
-          project.projectName.indexOf(" ")
-        )}
-          </h3>
-          <p class="portfolio__text">
-            <span class="portfolio__info hidden-info">
-              ${project.projectText}
-            </span>
-            <span class="viewMore">
-              Show More<i class="bx bx-chevron-up"></i
-            >
-              </span>
-          </p>
-        </div>
-        <div class="portfolio__img">
-          <img src="../assets/img/mask.webp" alt="image" />
-          <img
-            class="ellipse__right"
-            src="../assets/img/EllipseProyects2.png"
-            alt="image"
-          />
-          <div class="project__desktop left">
-                      <div class="project__content">
-
-            <div class="project__img">
-              <img src="${project.projectDesktopImg}" alt="project image" />
-            </div>
-            <div class="project__technologies">
-              <div class="project__technologies-list">
-                ${project.technologies
-                  .map(
-                    (technology, i) =>
-                      `
-                    <div class="project__technology-icon" style="--j: ${i + 1}">
-                      <img src="${technology.icon}" alt="icon icon">
-                    </div>
-                    `
-                  )
-                  .join("")}
-              </div>
-              </div>
-            </div>
-            </div>
-
-          <div class="project__mobile left">
-            <div class="a">
-             <div class="b">
-             <div class="c">
-                <div class="d">
-
-             <a
-                  aria-label="website"
-                  href="${project.link}"
-                  target="_blank"
-                  >${
-                    check.checked ? "Sitio Web" : "Web Site"
-                  }<i class="bx bx-right-top-arrow-circle"></i>
-                  </a>
-                                    </div>
-                  </div>
-
-
-            <div class="project__img">
-              <img src="${project.projectMobileImg}" alt="project image" />
-            </div>
-          </div>
-        </div>
-                   </div>
-
-      </article>`;
-      }
-    });
-
-    projectsDOM.innerHTML = htmlProjects;
-  }
-  printProjects();
-
-  let showText = document.querySelectorAll(".viewMore");
-
-  showText.forEach((text) =>
-    text.addEventListener("click", function (e) {
-      let spanElement = this;
-      let altura = spanElement.previousElementSibling.scrollHeight;
-      let alturaPadre = portfolioContainer.scrollHeight;
-      let alturaPrevia = spanElement.previousElementSibling.offsetHeight;
-      if (
-        spanElement.previousElementSibling.classList.contains("hidden-info")
-      ) {
-        spanElement.previousElementSibling.classList.remove("hidden-info");
-        spanElement.childNodes[0].nodeValue = check.checked
-          ? "Show Less"
-          : "Mostrar Menos";
-        if (!portfolioContainer.classList.contains("hidden__projects")) {
-          portfolioContainer.style.maxHeight =
-            alturaPadre + (altura - alturaPrevia) + "px";
-        }
-      } else {
-        spanElement.previousElementSibling.classList.add("hidden-info");
-        spanElement.childNodes[0].nodeValue = check.checked
-          ? "Show More"
-          : "Mostrar Más";
-        if (!portfolioContainer.classList.contains("hidden__projects")) {
-          portfolioContainer.style.maxHeight =
-            alturaPadre - (altura - alturaPrevia) + "px";
-        }
-      }
-    })
-  );
+if (check.checked) {
+  printProjects(projectsEN, check, portfolioContainer);
+  printFeaturedProjects(featuredProjectsEN, check);
+} else {
+  printProjects(projectsES, check, portfolioContainer);
+  printFeaturedProjects(featuredProjectsES, check);
 }
 
-export default printProjects;
+headerBtn.addEventListener("click", toggleMenu);
+check.addEventListener("click", () => handleCheckClick(check));
+showProjects.addEventListener("click", (e) =>
+  handleShowProjectsClick(e, portfolioContainer, showDegradiant)
+);
+closeIcon.addEventListener("click", () => {
+  toast.classList.remove("active");
+  setTimeout(() => {
+    progress.classList.remove("active");
+  }, 300);
+});
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+  const data = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    message: formData.get("message"),
+  };
+  emailjs.send("service_9hmvrez", "template_aiuhovu", data).then((res) => {
+    showToast();
+    this.reset();
+  });
+});
+
+const swiper = new Swiper(".portfolio .swiper", {
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 10,
+
+  pagination: {
+    el: ".swiper-pagination",
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+});
+
+window.addEventListener("load", () => handleLoadEvent(pointer));
+
+observeSections(sections, links);
+
+let projectsInfo = document.querySelectorAll(".portfolio__item");
+
+observeProject(projectsInfo);
+
+function addEvents() {
+  window.addEventListener("scroll", handleScroll);
+  document.addEventListener("click", handleClickLeaveMenu);
+}
+function removeEvents() {
+  window.removeEventListener("scroll", handleScroll);
+  document.removeEventListener("click", handleClickLeaveMenu);
+}
+function handleClickLeaveMenu(e) {
+  if (
+    headerMenu.classList.contains("show__menu") &&
+    !e.target.closest(".header__btn")
+  ) {
+    toggleMenu();
+  }
+}
+function handleScroll() {
+  if (headerMenu.classList.contains("show__menu")) {
+    toggleMenu();
+  }
+}
+function toggleMenu() {
+  if (headerMenu.classList.contains("show__menu")) {
+    headerMenu.classList.remove("show__menu");
+    removeEvents();
+  } else {
+    headerMenu.classList.add("show__menu");
+    addEvents();
+  }
+}
+
+function showToast() {
+  toast.classList.add("active");
+  progress.classList.add("active");
+
+  setTimeout(() => {
+    toast.classList.remove("active");
+  }, 5000);
+
+  setTimeout(() => {
+    progress.classList.remove("active");
+  }, 5300);
+}
