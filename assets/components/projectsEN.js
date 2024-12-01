@@ -104,6 +104,7 @@ const projectsEN = [
       { name: "TailwindCSS", icon: "../../public/svg/icons/tailwind.svg" },
       { name: "Axios", icon: "../../public/svg/icons/axios.svg" },
       { name: "Typescript", icon: "../../public/svg/icons/typescript.svg" },
+      { name: "Redux", icon: "../../public/svg/icons/redux.svg" },
     ],
     link: "https://weather-time-site.netlify.app/",
   },
