@@ -91,7 +91,7 @@ const projectsEN = [
   {
     projectName: "weather app",
     projectDesktopImg: "../assets/img/Clima.webp",
-    projectMobileImg: "../assets/img/ClimaMovil.jpg",
+    projectMobileImg: "../assets/img/ClimaMovil.webp",
     projectText: `In the development of this application, I employed a
       combination of advanced technologies, including ReactJS and
       TailwindCSS. I implemented API consumption, requesting
