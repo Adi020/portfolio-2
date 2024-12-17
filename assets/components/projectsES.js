@@ -13,8 +13,9 @@ const projectsES = [
       { name: "ExpressJS", icon: "../../public/svg/icons/express.svg" },
       { name: "Sequelize", icon: "../../public/svg/icons/sequelize.svg" },
       { name: "Axios", icon: "../../public/svg/icons/axios.svg" },
+      { name: "Typescript", icon: "../../public/svg/icons/typescript.svg" },
     ],
-    link: "https://entregable-gen26.netlify.app/",
+    link: "https://phrase-random.netlify.app/",
   },
   {
     projectName: "crud de usuarios",
